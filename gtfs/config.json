@@ -1,0 +1,12 @@
+{
+  "mongoUrl": "mongodb://localhost:27017/gtfs",
+  "agencies": [
+    {
+      "agency_key": "tallinn",
+      "url": "http://www.peatus.ee/gtfs/gtfs.zip",
+      "exclude": [
+        "shapes"
+      ]
+    }
+  ]
+}
