@@ -1,54 +1,86 @@
 <template>
-  <div id="app">
-    <header>
-      <span>Vue.js PWA</span>
-    </header>
+  <div id="app" class="app-container">
+    <navbar />
+
     <main>
-      <img src="./assets/logo.png" alt="Vue.js PWA">
+      <Logo class="hero-logo" />
+
       <router-view></router-view>
     </main>
+
+    <footer>
+      &copy; <a href="https://andreasvirkus.me">ajv</a> /2018
+    </footer>
   </div>
 </template>
 
 <script>
+import Navbar from '@/components/Navbar'
+import Logo from '@/assets/svg/logo.svg'
+
 export default {
-  name: 'app'
+  name: 'app',
+  components: { Navbar, Logo }
 }
 </script>
 
 <style>
-body {
-  margin: 0;
-}
+  *,
+  *::before,
+  *::after {
+    box-sizing: inherit;
+  }
 
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
-}
+  html {
+    box-sizing: border-box;
+  }
 
-main {
-  text-align: center;
-  margin-top: 40px;
-}
+  body {
+    font-family: Cousine,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
+    background-color: #f1f3f5;
+    letter-spacing: .44px;
+    line-height: 1.76;
+    padding: 0;
+    margin: 0;
+  }
 
-header {
-  margin: 0;
-  height: 56px;
-  padding: 0 16px 0 24px;
-  background-color: #35495E;
-  color: #ffffff;
-}
+  .app-container {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #2c3e50;
+  }
 
-header span {
-  display: block;
-  position: relative;
-  font-size: 20px;
-  line-height: 1;
-  letter-spacing: .02em;
-  font-weight: 400;
-  box-sizing: border-box;
-  padding-top: 16px;
-}
+  main {
+    text-align: center;
+    margin-top: 40px;
+    flex: 1;
+  }
+
+  h2 {
+    font-weight: 200;
+  }
+
+  h1::first-letter,
+  h2::first-letter {
+    color: tomato;
+  }
+
+  a {
+    color: inherit;
+  }
+
+  footer {
+    display: block;
+    text-align: center;
+  }
+  footer a {
+    color: tomato;
+  }
+
+  .hero-logo {
+    width: 60px;
+  }
 </style>
