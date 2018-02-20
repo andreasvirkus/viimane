@@ -6,7 +6,9 @@ A simple PWA to display your last ride home in Tallinn.
 
 ## TODO
 - Parse GTFS
-- 
+- Display data according to vehicle type
+- Display data according to stop selected (cross-vehicle or only for selected vehicle?)
+- Fix content jump during route transition (make sections absolute)
 
 ## Build Setup
 
