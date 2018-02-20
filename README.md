@@ -2,6 +2,12 @@
 
 > Last-call for public transports of Tallinn
 
+A simple PWA to display your last ride home in Tallinn.
+
+## TODO
+- Parse GTFS
+- 
+
 ## Build Setup
 
 ``` bash

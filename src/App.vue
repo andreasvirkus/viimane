@@ -5,7 +5,9 @@
     <main>
       <Logo class="hero-logo" />
 
-      <router-view></router-view>
+      <transition name="view" mode="out-in">
+        <router-view :key="$router.fullPath" />
+      </transition>
     </main>
 
     <footer>
@@ -50,7 +52,8 @@ export default {
     flex-direction: column;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    color: #2c3e50;
+    color: rgb(17,17,17);
+    font-weight: 200;
   }
 
   main {
@@ -65,11 +68,20 @@ export default {
 
   h1::first-letter,
   h2::first-letter {
-    color: tomato;
+    color: #ff3d00;
   }
 
   a {
     color: inherit;
+  }
+
+  section {
+    padding: 40px;
+    max-width: 740px;
+    /* width: 90%; */
+    margin: 10px auto 45px;
+    background-color: #fff;
+    box-shadow: 0 16px 24px 0 rgba(118,143,255,0.2);
   }
 
   footer {
@@ -77,10 +89,24 @@ export default {
     text-align: center;
   }
   footer a {
-    color: tomato;
+    color: #ff3d00;
   }
 
   .hero-logo {
     width: 60px;
   }
+
+
+  .view-enter {
+    transform: translateX(100%);
+  }
+  .view-leave {
+    transform: translateX(-100%);
+  }
+  .view-enter-active {
+    transition: transform 0.4s ease-out;
+  }
+  /* .view-back-enter, .view-back-leave {
+    transform: translateX(100%);
+  } */
 </style>
