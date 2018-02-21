@@ -34,6 +34,11 @@ export default new Router({
       path: '/peatus/:name?',
       name: 'Stop',
       component: Stop
+    },
+    {
+      path: '/*',
+      name: 'NotFound',
+      component: NotFound
     }
   ]
 })
