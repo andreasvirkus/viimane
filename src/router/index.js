@@ -31,7 +31,7 @@ export default new Router({
       component: Trolley
     },
     {
-      path: '/peatus/:number?',
+      path: '/peatus/:name?',
       name: 'Stop',
       component: Stop
     }
