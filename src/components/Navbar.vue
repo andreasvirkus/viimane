@@ -28,6 +28,7 @@
     padding: 0 16px 0 24px;
     background-color: #35495E;
     color: #ffffff;
+    align-items: center;
     /* box-shadow: 0 16px 24px 0 rgba(118,143,255,0.2); */
   }
 
@@ -39,17 +40,26 @@
     letter-spacing: .02em;
     font-weight: 400;
     box-sizing: border-box;
-    padding-top: 16px;
     margin-right: auto;
     text-decoration: none;
   }
 
-  header a {
+  header a + a {
     margin-left: 1em;
   }
 
   header nav {
     display: flex;
-    align-items: center;
+  }
+
+  @media (max-width: 35em) {
+    header > a {
+      display: none;
+    }
+
+    header nav {
+      width: 100%;
+      justify-content: space-around;
+    }
   }
 </style>
