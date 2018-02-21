@@ -16,19 +16,24 @@ export default new Router({
       component: Landing
     },
     {
-      path: '/buss',
+      path: '/buss/:number?',
       name: 'Bus',
       component: Bus
     },
     {
-      path: '/tramm',
+      path: '/tramm/:number?',
       name: 'Streetcar',
       component: Streetcar
     },
     {
-      path: '/troll',
+      path: '/troll/:number?',
       name: 'Trolley',
       component: Trolley
+    },
+    {
+      path: '/peatus/:number?',
+      name: 'Stop',
+      component: Stop
     }
   ]
 })

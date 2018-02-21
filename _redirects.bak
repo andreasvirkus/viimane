@@ -1,5 +1,0 @@
-/buss/*    /#/buss/:splat     200
-/tramm/*   /#/tramm/:splat    200
-/troll/*   /#/troll/:splat    200
-/peatus/*  /#/peatus/:splat   200
-/*         /#/nope            404
