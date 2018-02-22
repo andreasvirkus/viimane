@@ -1,9 +1,12 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Landing from '@/pages/Landing'
-import Streetcar from '@/pages/Streetcar'
+
 import Bus from '@/pages/Bus'
+import Stop from '@/pages/Stop'
+import Landing from '@/pages/Landing'
 import Trolley from '@/pages/Trolley'
+import NotFound from '@/pages/NotFound'
+import Streetcar from '@/pages/Streetcar'
 
 Vue.use(Router)
 
