@@ -11,7 +11,6 @@
     <!--[if IE]><link rel="shortcut icon" href="/static/img/icons/favicon.ico"><![endif]-->
     <!-- Add to home screen for Android and modern mobile browsers -->
     <link rel="manifest" href="<%= htmlWebpackPlugin.files.publicPath %>static/manifest.json">
-    <link rel="manifest" href="<%= htmlWebpackPlugin.files.publicPath %>static/img/icons/site.webmanifest">
 
     <meta name="theme-color" content="#35495E">
 
@@ -23,7 +22,7 @@
     <link rel="mask-icon" href="<%= htmlWebpackPlugin.files.publicPath %>static/img/icons/safari-pinned-tab.svg" color="#35495E">
     <!-- Add to home screen for Windows -->
     <meta name="msapplication-TileImage" content="<%= htmlWebpackPlugin.files.publicPath %>static/img/icons/msapplication-icon-144x144.png">
-    <meta name="msapplication-config" content="<%= htmlWebpackPlugin.files.publicPath %>static/img/icons/browserconfig.xml">
+    <meta name="msapplication-config" content="<%= htmlWebpackPlugin.files.publicPath %>static/img/icons/1onfig.xml">
     <meta name="msapplication-TileColor" content="#35495E">
     <% for (var chunk of webpack.chunks) {
         for (var file of chunk.files) {
@@ -33,7 +32,22 @@
   </head>
   <body>
     <noscript>
-      This is your fallback content in case JavaScript fails to load.
+      <div class="app-container">
+        <section>
+          <img src="<%= htmlWebpackPlugin.files.publicPath %>src/assets/svg/cone.svg" alt="A sad warning cone">
+
+          <h1>No-noh...</h1>
+
+          <p>Kohe üldse ei suuda JavaScripti leida su brauserist.</p>
+          <p>Palun võimalda see, et reisiaegu näha.</p>
+
+          <hr>
+
+          <h2>Well-well...</h2>
+          <p>Seems you're all out of JavaScript today.</p>
+          <p>Please enable it in order to see transit times.</p>
+        </section>
+      </div>
     </noscript>
     <div id="app"></div>
     <!-- Todo: only include in production -->

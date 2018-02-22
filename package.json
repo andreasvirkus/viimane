@@ -7,15 +7,14 @@
   "scripts": {
     "dev": "node build/dev-server.js",
     "start": "node build/dev-server.js",
-    "build": "node build/build.js && cp _redirects dist/",
+    "build": "node build/build.js && cp _redirects dist/ && cp dist/static/img/icons/favicon.ico dist/",
     "unit": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js --single-run",
     "test": "npm run unit",
     "lint": "eslint --ext .js,.vue src test/unit/specs"
   },
   "dependencies": {
     "vue": "^2.5.2",
-    "vue-router": "^3.0.1",
-    "vue-svg-loader": "^0.5.0"
+    "vue-router": "^3.0.1"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.5",
@@ -75,6 +74,7 @@
     "url-loader": "^0.6.2",
     "vue-loader": "^13.3.0",
     "vue-style-loader": "^3.0.3",
+    "vue-svg-loader": "^0.5.0",
     "vue-template-compiler": "^2.5.2",
     "webpack": "^3.7.1",
     "webpack-dev-middleware": "^1.12.0",
