@@ -5,10 +5,15 @@
 A simple PWA to display your last ride home in Tallinn.
 
 ## TODO
-- Parse GTFS
-- Display data according to vehicle type
-- Display data according to stop selected (cross-vehicle or only for selected vehicle?)
-- Fix content jump during route transition (make sections absolute)
+- Ask for vehicle type (save to state)
+- Get stop_id by:
+  - Having user select a stop from provided list
+  - Query user location to provide a new list of stops to choose from
+  - Have user enter a stop (& add search suggestions)
+- Ask for route number for that stop & vehicle
+- Display times (X last times & X next times)
+- Visual:
+  - Fix content jump during route transition (make sections absolute)
 
 ## Build Setup
 
