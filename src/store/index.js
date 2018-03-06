@@ -7,7 +7,11 @@ const state = {
   centralStops: []
 }
 
-const getters = {}
+const getters = {
+  // uniqueStops: state => [...new Set(state.centralStops.map(obj => obj.stop_name))]
+  uniqueStops: state => state.centralStops.map(stop => stop.stop_name)
+    .filter((v, i, self) => self.indexOf(v) === i)
+}
 
 const actions = {
   setCentralStops: ({ commit }, payload) => commit('SET_CENTRAL_STOPS', payload)

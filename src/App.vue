@@ -21,8 +21,8 @@ import Navbar from '@/components/Navbar'
 import Logo from '@/assets/svg/logo.svg'
 import { mapActions } from 'vuex'
 
-// const apiEndpoint = 'https://tallinn-transport-api.herokuapp.com'
-const apiEndpoint = 'http://localhost:5000'
+const apiEndpoint = 'https://tallinn-transport-api.herokuapp.com'
+// const apiEndpoint = 'http://localhost:5000'
 
 export default {
   name: 'app',
