@@ -19,10 +19,26 @@
 <script>
 import Navbar from '@/components/Navbar'
 import Logo from '@/assets/svg/logo.svg'
+import { mapActions } from 'vuex'
+
+// const apiEndpoint = 'https://tallinn-transport-api.herokuapp.com'
+const apiEndpoint = 'http://localhost:5000'
 
 export default {
   name: 'app',
-  components: { Navbar, Logo }
+  components: { Navbar, Logo },
+  methods: {
+    ...mapActions(['setCentralStops'])
+  },
+  created () {
+    fetch()
+    fetch(`${apiEndpoint}/api/center`)
+      .then(res => res.json())
+      .then(data => {
+        console.log(data)
+        this.setCentralStops(data)
+      })
+  }
 }
 </script>
 
