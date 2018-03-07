@@ -12,6 +12,7 @@ A simple PWA to display your last ride home in Tallinn.
   - Have user enter a stop (& add search suggestions)
 - Ask for route number for that stop & vehicle
 - Display times (X last times & X next times)
+- Unify pages components for vehicles to 1 dynamic route (pass vehicle and stop both as route params)
 - Visual:
   - Fix content jump during route transition (make sections absolute)
 

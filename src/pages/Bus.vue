@@ -1,6 +1,6 @@
 <template>
   <section>
-    <h2>Bussid</h2>
+    <h2 class="highlight-first">Bussid</h2>
 
     <p>Allpool näed viimaste busside aegu,
       et teaksid, millal jope selga ajada või mitu klaasi veel

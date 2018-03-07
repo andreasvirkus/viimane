@@ -1,6 +1,6 @@
 <template>
   <section>
-    <h2>Trollid</h2>
+    <h2 class="highlight-first">Trollid</h2>
 
     <p>Allpool näed viimaste trollide aegu,
       et teaksid, millal jope selga ajada või mitu klaasi veel

@@ -1,7 +1,7 @@
 <template>
   <header>
     <!-- <Logo /> -->
-    <router-link to="/">viimane</router-link>
+    <router-link to="/" class="highlight-first">viimane</router-link>
 
     <nav>
       <router-link to="/buss">buss</router-link>
@@ -45,7 +45,7 @@
   }
 
   header a + a {
-    margin-left: 1em;
+    margin-left: 2.5em;
   }
 
   header nav {
@@ -60,6 +60,10 @@
     header nav {
       width: 100%;
       justify-content: space-around;
+    }
+
+    header a + a {
+      margin-left: 0;
     }
   }
 </style>

@@ -31,13 +31,10 @@ export default {
     ...mapActions(['setCentralStops'])
   },
   created () {
-    fetch()
     fetch(`${apiEndpoint}/api/center`)
       .then(res => res.json())
-      .then(data => {
-        console.log(data)
-        this.setCentralStops(data)
-      })
+      .then(data => this.setCentralStops(data))
+      .catch(err => console.log('Could not fetch central stops:', err))
   }
 }
 </script>
@@ -76,25 +73,43 @@ export default {
     text-align: center;
     margin-top: 40px;
     flex: 1;
+    overflow-x: hidden;
   }
 
   h2 {
     font-weight: 200;
   }
 
-  h1::first-letter,
-  h2::first-letter {
+  .highlight-first::first-letter {
     color: #ff3d00;
   }
 
   a {
     color: inherit;
+    text-decoration: none;
+    border-bottom: 3px solid;
+    transition: border-color 0.125s ease-out, text-decoration-color 0.125s ease-out;
+  }
+
+  a:hover {
+    border-color: #ff3d00;
+  }
+
+  @supports (text-decoration-skip: ink) {
+    a {
+      border-bottom: none;
+      text-decoration: underline;
+      text-decoration-skip: ink;
+    }
+    a:hover {
+      text-decoration-color: #ff3d00;
+    }
   }
 
   section {
     padding: 40px;
     max-width: 740px;
-    /* width: 90%; */
+    width: 90%;
     margin: 10px auto 45px;
     background-color: #fff;
     box-shadow: 0 16px 24px 0 rgba(118,143,255,0.2);
@@ -103,6 +118,7 @@ export default {
   footer {
     display: block;
     text-align: center;
+    padding: 2em 0;
   }
   footer a {
     color: #ff3d00;
@@ -111,7 +127,6 @@ export default {
   .hero-logo {
     width: 60px;
   }
-
 
   .view-enter {
     transform: translateX(100%);
@@ -125,4 +140,10 @@ export default {
   /* .view-back-enter, .view-back-leave {
     transform: translateX(100%);
   } */
+
+  @media (max-width: 35em) {
+    .view-enter-active {
+      transition: transform 0.2s ease-out;
+    }
+  }
 </style>

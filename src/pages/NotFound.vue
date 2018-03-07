@@ -1,6 +1,6 @@
 <template>
   <section>
-    <h1>Ohohh!</h1>
+    <h1 class="highlight-first">Ohohh!</h1>
 
     <h3>Nii me küll kuhugi ei jõua...</h3>
 
