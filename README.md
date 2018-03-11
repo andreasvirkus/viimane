@@ -13,6 +13,8 @@ A simple PWA to display your last ride home in Tallinn.
 - Ask for route number for that stop & vehicle
 - Display times (X last times & X next times)
 - Unify pages components for vehicles to 1 dynamic route (pass vehicle and stop both as route params)
+- Save first-visit data to indexDB and always serve from there first (via SW), only then query the API for fresh data.
+- Once new data is fetched, overwrite indexedDB contents (but don't update data on the page?)
 - Visual:
   - Fix content jump during route transition (make sections absolute)
 

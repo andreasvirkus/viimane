@@ -8,17 +8,17 @@
 
     <p>Turvalist liiklemist!</p>
 
-    <ul v-if="uniqueStops.length">
-      <li v-for="stop in uniqueStops" :key="stop">{{ stop }}</li>
-    </ul>
+    <stops-list v-if="uniqueStops.length" :stops="uniqueStops" />
   </section>
 </template>
 
 <script>
   import { mapGetters } from 'vuex'
+  import StopsList from '@/components/StopsList'
 
   export default {
     name: 'landing',
+    components: { StopsList },
     computed: {
       ...mapGetters(['uniqueStops'])
     }

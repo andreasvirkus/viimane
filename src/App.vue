@@ -10,27 +10,35 @@
       </transition>
     </main>
 
-    <footer>
-      &copy; <a href="https://andreasvirkus.me">ajv</a> /2018
-    </footer>
+    <footing />
   </div>
 </template>
 
 <script>
 import Navbar from '@/components/Navbar'
+import Footing from '@/components/Footing'
 import Logo from '@/assets/svg/logo.svg'
 import { mapActions } from 'vuex'
 
 const apiEndpoint = 'https://tallinn-transport-api.herokuapp.com'
+// For dev use
 // const apiEndpoint = 'http://localhost:5000'
 
 export default {
   name: 'app',
-  components: { Navbar, Logo },
+  components: { Navbar, Logo, Footing },
   methods: {
     ...mapActions(['setCentralStops'])
   },
   created () {
+    // For dev use
+    this.setCentralStops([
+      { stop_name: 'Nurmiku' },
+      { stop_name: 'Metsakooli' },
+      { stop_name: 'Kose' },
+      { stop_name: 'Lükati' },
+      { stop_name: 'Haljas tee' }
+    ])
     fetch(`${apiEndpoint}/api/center`)
       .then(res => res.json())
       .then(data => this.setCentralStops(data))
@@ -113,15 +121,6 @@ export default {
     margin: 10px auto 45px;
     background-color: #fff;
     box-shadow: 0 16px 24px 0 rgba(118,143,255,0.2);
-  }
-
-  footer {
-    display: block;
-    text-align: center;
-    padding: 2em 0;
-  }
-  footer a {
-    color: #ff3d00;
   }
 
   .hero-logo {
