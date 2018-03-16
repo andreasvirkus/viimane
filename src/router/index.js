@@ -21,22 +21,26 @@ export default new Router({
     {
       path: '/buss/:number?',
       name: 'Bus',
-      component: Bus
+      component: Bus,
+      props: true
     },
     {
       path: '/tramm/:number?',
       name: 'Streetcar',
-      component: Streetcar
+      component: Streetcar,
+      props: true
     },
     {
       path: '/troll/:number?',
       name: 'Trolley',
-      component: Trolley
+      component: Trolley,
+      props: true
     },
     {
       path: '/peatus/:name?',
       name: 'Stop',
-      component: Stop
+      component: Stop,
+      props: true
     },
     {
       path: '/*',

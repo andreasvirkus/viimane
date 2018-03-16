@@ -23,7 +23,7 @@
     padding: 2em 0;
   }
   .footer-link {
-    border-color: #ff3d00;
+    border-color: var(--theme-red);
   }
   .footer-link:hover {
     border-color: inherit;

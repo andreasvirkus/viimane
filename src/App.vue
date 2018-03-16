@@ -48,6 +48,16 @@ export default {
 </script>
 
 <style>
+  /* TODO: Move these to a global.css file */
+  :root {
+    --theme-main: #35495E;
+    --theme-white: #f1f3f5;
+    --theme-red: #ff3d00;
+    --theme-bright-one: #706fd3;
+    --theme-bright-two: #B33771;
+    --theme-bright-three: #34ace0;
+  }
+
   *,
   *::before,
   *::after {
@@ -60,7 +70,7 @@ export default {
 
   body {
     font-family: Cousine,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
-    background-color: #f1f3f5;
+    background-color: var(--theme-white);
     letter-spacing: .44px;
     line-height: 1.76;
     padding: 0;
@@ -89,7 +99,7 @@ export default {
   }
 
   .highlight-first::first-letter {
-    color: #ff3d00;
+    color: var(--theme-red);
   }
 
   a {
@@ -100,7 +110,7 @@ export default {
   }
 
   a:hover {
-    border-color: #ff3d00;
+    border-color: var(--theme-red);
   }
 
   @supports (text-decoration-skip: ink) {
@@ -110,7 +120,7 @@ export default {
       text-decoration-skip: ink;
     }
     a:hover {
-      text-decoration-color: #ff3d00;
+      text-decoration-color: var(--theme-red);
     }
   }
 
@@ -119,7 +129,7 @@ export default {
     max-width: 740px;
     width: 90%;
     margin: 10px auto 45px;
-    background-color: #fff;
+    background-color: var(--theme-white);
     box-shadow: 0 16px 24px 0 rgba(118,143,255,0.2);
   }
 

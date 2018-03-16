@@ -26,8 +26,8 @@
     margin: 0;
     height: 56px;
     padding: 0 16px 0 24px;
-    background-color: #35495E;
-    color: #ffffff;
+    background-color: var(--theme-main);
+    color: #fff;
     align-items: center;
     /* box-shadow: 0 16px 24px 0 rgba(118,143,255,0.2); */
   }

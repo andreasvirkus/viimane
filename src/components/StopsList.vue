@@ -1,7 +1,7 @@
 <template>
   <ul v-if="stops.length" class="stops-list">
     <li v-for="(stop, i) in stops" :key="i" class="stops-list__stop">
-      <router-link to="#" class="stops-list__link">{{ stop }}</router-link>
+      <router-link :to="{ name: 'Stop', params: { name: stop } }" class="stops-list__link">{{ stop }}</router-link>
     </li>
   </ul>
 </template>
@@ -25,7 +25,7 @@
   }
 
   .stops-list__stop {
-    background-color: #706fd3;
+    background-color: var(--theme-bright-one);
   }
 
   .stops-list__link {
