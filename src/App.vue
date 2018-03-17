@@ -66,6 +66,7 @@ export default {
 
   html {
     box-sizing: border-box;
+    margin-left: calc(100vw - 100%);
   }
 
   body {
