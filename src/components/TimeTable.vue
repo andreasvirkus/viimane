@@ -1,8 +1,10 @@
 <template>
   <dl v-if="times.length" class="time-table">
     <template v-for="(route, i) in times" class="time-table__time">
-      <dt :key="i" class="time-table__destination">{{ route.destination }}</dt>
-      <dd v-for="(time, j) in route.times" :key="j" class="time-table__time">{{ route.destination }}</dd>
+      <dt :key="i" class="time-table__destination"
+        :class="['time-table__destination' + (i + 1), 'bg-bright-' + (i % 2 ? 'two' : 'three')]">{{ route.destination }}</dt>
+      <dd v-for="(time, j) in route.times" :key="time + j" class="time-table__time"
+        :class="'bg-bright-' + (i % 2 ? 'two' : 'three')">{{ time }}</dd>
     </template>
   </dl>
 </template>
@@ -60,11 +62,37 @@
     display: block;
     color: #fff;
     margin: 0;
+    grid-area: time;
+  }
+
+  .time-table__destination {
+    grid-column: 1 / span 2;
+  }
+
+  .time-table__destination::before {
+    content: '\021DD';
+    /* content: '\021D2'; */
+    display: inline-block;
+    transform: translateX(-25px);
+  }
+
+  .time-table__destination1 {
+    grid-area: destination1;
+  }
+
+  .time-table__destination2 {
+    grid-area: destination2;
   }
 
   @media (max-width: 35em) {
     .time-table {
       grid-template-columns: repeat(2, 1fr);
+      grid-template-areas:
+        "destination1  destination2"
+        "time          time";
+    }
+    .time-table__destination::before {
+      transform: translateX(-5px);
     }
   }
 </style>

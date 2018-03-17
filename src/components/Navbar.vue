@@ -1,22 +1,24 @@
 <template>
-  <header>
-    <!-- <Logo /> -->
-    <router-link to="/" class="highlight-first">viimane</router-link>
+  <headroom>
+    <header>
+      <router-link to="/" class="highlight-first">viimane</router-link>
 
-    <nav>
-      <router-link to="/buss">buss</router-link>
-      <router-link to="/tramm">tramm</router-link>
-      <router-link to="/troll">troll</router-link>
-    </nav>
-  </header>
+      <nav>
+        <router-link to="/buss">buss</router-link>
+        <router-link to="/tramm">tramm</router-link>
+        <router-link to="/troll">troll</router-link>
+      </nav>
+    </header>
+  </headroom>
 </template>
 
 <script>
   import Logo from '@/assets/svg/logo.svg'
+  import { headroom } from 'vue-headroom'
 
   export default {
     name: 'navbar',
-    components: { Logo }
+    components: { Logo, headroom }
   }
 </script>
 

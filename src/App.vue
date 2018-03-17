@@ -89,7 +89,7 @@ export default {
 
   main {
     text-align: center;
-    margin-top: 40px;
+    margin-top: 80px;
     flex: 1;
     overflow-x: hidden;
   }
@@ -122,6 +122,19 @@ export default {
     a:hover {
       text-decoration-color: var(--theme-red);
     }
+  }
+
+  .bg-bright-one {
+    background-color: var(--theme-bright-one);
+    color: #fff;
+  }
+  .bg-bright-two {
+    background-color: var(--theme-bright-two);
+    color: #fff;
+  }
+  .bg-bright-three {
+    background-color: var(--theme-bright-three);
+    color: #fff;
   }
 
   section {
