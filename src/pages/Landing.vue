@@ -8,19 +8,19 @@
 
     <p>Turvalist liiklemist!</p>
 
-    <stops-list v-if="uniqueStops.length" :stops="uniqueStops" />
+    <stops-list v-if="centralStops.length" :stops="centralStops" />
   </section>
 </template>
 
 <script>
-  import { mapGetters } from 'vuex'
+  import { mapState } from 'vuex'
   import StopsList from '@/components/StopsList'
 
   export default {
     name: 'landing',
     components: { StopsList },
     computed: {
-      ...mapGetters(['uniqueStops'])
+      ...mapState(['centralStops'])
     }
   }
 </script>

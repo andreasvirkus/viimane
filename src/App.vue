@@ -20,9 +20,9 @@ import Footing from '@/components/Footing'
 import Logo from '@/assets/svg/logo.svg'
 import { mapActions } from 'vuex'
 
-const apiEndpoint = 'https://tallinn-transport-api.herokuapp.com'
+// const apiEndpoint = 'https://tallinn-transport-api.herokuapp.com'
 // For dev use
-// const apiEndpoint = 'http://localhost:5000'
+const apiEndpoint = 'http://localhost:5000'
 
 export default {
   name: 'app',
@@ -33,11 +33,11 @@ export default {
   created () {
     // For dev use
     this.setCentralStops([
-      { stop_name: 'Nurmiku' },
-      { stop_name: 'Metsakooli' },
-      { stop_name: 'Kose' },
-      { stop_name: 'Lükati' },
-      { stop_name: 'Haljas tee' }
+      { stop_name: 'Nurmiku', stop_id: 0 },
+      { stop_name: 'Metsakooli', stop_id: 1 },
+      { stop_name: 'Kose', stop_id: 2 },
+      { stop_name: 'Lükati', stop_id: 3 },
+      { stop_name: 'Haljas tee', stop_id: 4 }
     ])
     fetch(`${apiEndpoint}/api/center`)
       .then(res => res.json())

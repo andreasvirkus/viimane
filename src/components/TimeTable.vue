@@ -84,7 +84,7 @@
 
   @media (min-width: 35em) {
     .time-table__listing {
-      grid-template-columns: repeat(2, 1fr);    
+      grid-template-columns: repeat(2, 1fr);
     }
     .time-table__listing::before {
       grid-column: 1 / span 2;    

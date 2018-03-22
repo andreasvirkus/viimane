@@ -4,13 +4,18 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 
 const state = {
-  centralStops: []
+  centralStops: [],
+  stops: [],
+  stop: {},
+  vehicles: ['bus', 'tram', 'troll'],
+  vehicle: ''
 }
 
 const getters = {
   // uniqueStops: state => [...new Set(state.centralStops.map(obj => obj.stop_name))]
-  uniqueStops: state => state.centralStops.map(stop => stop.stop_name)
-    .filter((v, i, self) => self.indexOf(v) === i)
+  // uniqueStops: state => state.centralStops
+  //   .filter((v, i, self) => self.indexOf(v) === i)
+  activeStop: (state, id) => state.centralStops.filter(stop => stop.stop_id === id)
 }
 
 const actions = {

@@ -37,7 +37,7 @@ export default new Router({
       props: true
     },
     {
-      path: '/peatus/:name?',
+      path: '/peatus/:id?',
       name: 'Stop',
       component: Stop,
       props: true

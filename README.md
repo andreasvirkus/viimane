@@ -5,6 +5,7 @@
 A simple PWA to display your last ride home in Tallinn.
 
 ## TODO
+- Make API endpoint choice dynamic and store it in env variable
 - Ask for vehicle type (save to state)
 - Get stop_id by:
   - Having user select a stop from provided list
