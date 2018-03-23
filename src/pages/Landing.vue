@@ -8,7 +8,7 @@
 
     <p>Turvalist liiklemist!</p>
 
-    <stops-list v-if="centralStops.length" :stops="centralStops" />
+    <stops-list v-if="stops.length" :stops="stops" />
   </section>
 </template>
 
@@ -20,7 +20,7 @@
     name: 'landing',
     components: { StopsList },
     computed: {
-      ...mapState(['centralStops'])
+      ...mapState(['stops'])
     }
   }
 </script>

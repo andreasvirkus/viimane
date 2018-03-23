@@ -1,8 +1,6 @@
 <template>
   <ul v-if="stops.length" class="stops-list">
-    <!-- <li>{{ stops }}</li> -->
     <li v-for="(stop, i) in stops" :key="i" class="stops-list__stop">
-      {{ stop }}
       <router-link :to="{ name: 'Stop', params: { id: stop.stop_id } }" class="stops-list__link">{{ stop.stop_name }}</router-link>
     </li>
   </ul>

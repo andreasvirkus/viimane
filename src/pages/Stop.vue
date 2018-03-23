@@ -1,6 +1,6 @@
 <template>
   <section>
-    <h2 class="highlight-first">Peatus<span v-if="name">: {{ name }}</span><template v-else>ed</template></h2>
+    <h2 class="highlight-first">Peatus<span v-if="activeStop">: {{ activeStop.stop_name }}</span><template v-else>ed</template></h2>
 
     <template v-if="id">
       <p>Allpool näed selle peatuse viimaseid väljumisaegu,
@@ -9,28 +9,41 @@
 
       <p>Turvalist liiklemist!</p>
 
-      <time-table :stop="activeStop.name" />
+      <time-table :stop="activeStop" :times="times" />
     </template>
     <template v-else>
       <p>Vali mõni peatus, et selle aegu näha:</p>
 
-      <stops-list v-if="centralStops.length" :stops="centralStops" />
+      <stops-list v-if="stops.length" :stops="stops" />
     </template>
   </section>
 </template>
 
 <script>
-  import { mapState, mapGetters } from 'vuex'
+  import { mapState, mapGetters, mapActions } from 'vuex'
   import StopsList from '@/components/StopsList'
   import TimeTable from '@/components/TimeTable'
 
   export default {
     name: 'stop',
-    props: ['name'],
+    props: ['id'],
     components: { StopsList, TimeTable },
     computed: {
-      ...mapState(['centralStops']),
+      ...mapState(['stops']),
       ...mapGetters(['activeStop'])
+    },
+    data () {
+      return {
+        times: []
+      }
+    },
+    methods: {
+      ...mapActions(['setActiveStop'])
+    },
+    created () {
+      this.id && this.setActiveStop(this.id)
+      console.log('Active stop:', this.stop.stop_name, this.stop.stop_id)
+      // TODO: Query for stopTimes based on this.stop.stop_id
     }
   }
 </script>

@@ -28,21 +28,21 @@ export default {
   name: 'app',
   components: { Navbar, Logo, Footing },
   methods: {
-    ...mapActions(['setCentralStops'])
+    ...mapActions(['setStops'])
   },
   created () {
     // For dev use
-    this.setCentralStops([
+    this.setStops([
       { stop_name: 'Nurmiku', stop_id: 0 },
       { stop_name: 'Metsakooli', stop_id: 1 },
       { stop_name: 'Kose', stop_id: 2 },
       { stop_name: 'Lükati', stop_id: 3 },
       { stop_name: 'Haljas tee', stop_id: 4 }
     ])
-    fetch(`${apiEndpoint}/api/center`)
+    fetch(`${apiEndpoint}/api/stops/center`)
       .then(res => res.json())
-      .then(data => this.setCentralStops(data))
-      .catch(err => console.log('Could not fetch central stops:', err))
+      .then(data => this.setStops(data))
+      .catch(err => console.error('Could not fetch central stops:', err))
   }
 }
 </script>

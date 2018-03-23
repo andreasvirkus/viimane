@@ -6,25 +6,31 @@ Vue.use(Vuex)
 const state = {
   centralStops: [],
   stops: [],
-  stop: {},
+  stop: null,
   vehicles: ['bus', 'tram', 'troll'],
   vehicle: ''
 }
 
 const getters = {
-  // uniqueStops: state => [...new Set(state.centralStops.map(obj => obj.stop_name))]
-  // uniqueStops: state => state.centralStops
-  //   .filter((v, i, self) => self.indexOf(v) === i)
-  activeStop: (state, id) => state.centralStops.filter(stop => stop.stop_id === id)
+  centralStops: state => state.stops.filter(stop => stop.stop_area === 'Kesklinn' && stop.zone_name.startsWith('Harju')),
+  activeStop: (state, id) => state.stops.filter(stop => stop.stop_id === state.stop)[0]
 }
 
 const actions = {
-  setCentralStops: ({ commit }, payload) => commit('SET_CENTRAL_STOPS', payload)
+  setCentralStops: ({ commit }, payload) => commit('SET_CENTRAL_STOPS', payload),
+  setStops: ({ commit }, payload) => commit('SET_STOPS', payload),
+  setActiveStop: ({ commit }, payload) => commit('SET_ACTIVE_STOP', payload)
 }
 
 const mutations = {
   SET_CENTRAL_STOPS (state, payload) {
     state.centralStops = payload
+  },
+  SET_STOPS (state, payload) {
+    state.stops = payload
+  },
+  SET_ACTIVE_STOP (state, payload) {
+    state.stop = payload
   }
 }
 
