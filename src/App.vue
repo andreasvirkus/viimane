@@ -29,16 +29,7 @@ export default {
     ...mapActions(['setStops'])
   },
   created () {
-    // For dev use
-    this.setStops([
-      { stop_name: 'Nurmiku', stop_id: 0 },
-      { stop_name: 'Metsakooli', stop_id: 1 },
-      { stop_name: 'Kose', stop_id: 2 },
-      { stop_name: 'Lükati', stop_id: 3 },
-      { stop_name: 'Haljas tee', stop_id: 4 }
-    ])
-    console.log('API host:', apiEndpoint)
-
+    // TODO: Move this to state action?
     fetch(`${apiEndpoint}/api/stops/center`)
       .then(res => res.json())
       .then(data => this.setStops(data))

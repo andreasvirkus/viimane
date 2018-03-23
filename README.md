@@ -18,7 +18,10 @@ A simple PWA to display your last ride home in Tallinn.
 - Once new data is fetched, overwrite indexedDB contents (but don't update data on the page?)
 - Visual:
   - ~Fix content jump during route transition (make sections absolute)~
+  - Remove nav background and only add it if `.headroom--not-top.headroom--pinned`
 - Refactor to vue-cli@3 base?
+- Reconsider the need for vuex (no deeply nested components atm, etc)
+  - App could simply query stops (find out query size), write GTFS structure to indexedDB and use vue-localForage instead.
 
 
 ## Build Setup
