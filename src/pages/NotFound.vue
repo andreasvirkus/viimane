@@ -2,11 +2,13 @@
   <section>
     <h1 class="highlight-first">Ohohh!</h1>
 
-    <h3>Nii me küll kuhugi ei jõua...</h3>
+    <h3>
+      Nii me küll kuhugi ei jõua...
+    </h3>
+    <p>Tundub, et otsitud lehte ei eksisteeri.</p>
+    <p><router-link to="/">Tagasi esilehele</router-link></p>
 
-    <Cone />
-
-    <router-link to="/">Esilehele</router-link>
+    <Cone class="not-found-svg" />
   </section>
 </template>
 
@@ -20,5 +22,7 @@ export default {
 </script>
 
 <style>
-
+  .not-found-svg {
+    height: 10em;
+  }
 </style>

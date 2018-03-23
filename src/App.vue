@@ -20,9 +20,7 @@ import Footing from '@/components/Footing'
 import Logo from '@/assets/svg/logo.svg'
 import { mapActions } from 'vuex'
 
-// const apiEndpoint = 'https://tallinn-transport-api.herokuapp.com'
-// For dev use
-const apiEndpoint = 'http://localhost:5000'
+const apiEndpoint = process.env.API_HOST
 
 export default {
   name: 'app',
@@ -39,6 +37,8 @@ export default {
       { stop_name: 'Lükati', stop_id: 3 },
       { stop_name: 'Haljas tee', stop_id: 4 }
     ])
+    console.log('API host:', apiEndpoint)
+
     fetch(`${apiEndpoint}/api/stops/center`)
       .then(res => res.json())
       .then(data => this.setStops(data))

@@ -42,7 +42,7 @@
     },
     created () {
       this.id && this.setActiveStop(this.id)
-      console.log('Active stop:', this.stop.stop_name, this.stop.stop_id)
+      // console.log('Active stop:', this.stop.stop_name, this.stop.stop_id)
       // TODO: Query for stopTimes based on this.stop.stop_id
     }
   }

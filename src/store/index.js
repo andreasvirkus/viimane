@@ -19,7 +19,10 @@ const getters = {
 const actions = {
   setCentralStops: ({ commit }, payload) => commit('SET_CENTRAL_STOPS', payload),
   setStops: ({ commit }, payload) => commit('SET_STOPS', payload),
-  setActiveStop: ({ commit }, payload) => commit('SET_ACTIVE_STOP', payload)
+  setActiveStop: ({ commit }, payload) => {
+    // TODO: Query times here
+    commit('SET_ACTIVE_STOP', payload)
+  }
 }
 
 const mutations = {

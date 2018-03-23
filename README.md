@@ -5,21 +5,25 @@
 A simple PWA to display your last ride home in Tallinn.
 
 ## TODO
-- Make API endpoint choice dynamic and store it in env variable
+- ~Make API endpoint dynamic and store it in env variable~
 - Ask for vehicle type (save to state)
 - Get stop_id by:
-  - Having user select a stop from provided list
+  - ~Having user select a stop from provided list~
   - Query user location to provide a new list of stops to choose from
   - Have user enter a stop (& add search suggestions)
 - Ask for route number for that stop & vehicle
-- Display times (X last times & X next times)
+- Displaying N number of route times (1 <> N of last route times?)
 - Unify pages components for vehicles to 1 dynamic route (pass vehicle and stop both as route params)
 - Save first-visit data to indexDB and always serve from there first (via SW), only then query the API for fresh data.
 - Once new data is fetched, overwrite indexedDB contents (but don't update data on the page?)
 - Visual:
-  - Fix content jump during route transition (make sections absolute)
+  - ~Fix content jump during route transition (make sections absolute)~
+- Refactor to vue-cli@3 base?
+
 
 ## Build Setup
+
+Using vue-cli@2 and the PWA template as a base
 
 ``` bash
 # install dependencies
