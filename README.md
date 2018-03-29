@@ -19,9 +19,11 @@ A simple PWA to display your last ride home in Tallinn.
 - Visual:
   - ~Fix content jump during route transition (make sections absolute)~
   - Remove nav background and only add it if `.headroom--not-top.headroom--pinned`
+  - Dark theme
 - Refactor to vue-cli@3 base?
 - Reconsider the need for vuex (no deeply nested components atm, etc)
   - App could simply query stops (find out query size), write GTFS structure to indexedDB and use vue-localForage instead.
+  - Strip vuex
 
 
 ## Build Setup

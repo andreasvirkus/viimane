@@ -20,8 +20,6 @@ import Footing from '@/components/Footing'
 import Logo from '@/assets/svg/logo.svg'
 import { mapActions } from 'vuex'
 
-const apiEndpoint = process.env.API_HOST
-
 export default {
   name: 'app',
   components: { Navbar, Logo, Footing },
@@ -30,7 +28,7 @@ export default {
   },
   created () {
     // TODO: Move this to state action?
-    fetch(`${apiEndpoint}/api/stops/center`)
+    fetch(`${this.$api}/stops/center`)
       .then(res => res.json())
       .then(data => this.setStops(data))
       .catch(err => console.error('Could not fetch central stops:', err))

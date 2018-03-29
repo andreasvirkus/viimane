@@ -4,6 +4,7 @@ import router from './router'
 import store from './store'
 
 Vue.config.productionTip = false
+Vue.prototype.$api = process.env.API_HOST
 
 /* eslint-disable no-new */
 new Vue({

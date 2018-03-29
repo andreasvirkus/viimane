@@ -43,7 +43,13 @@
     created () {
       this.id && this.setActiveStop(this.id)
       // console.log('Active stop:', this.stop.stop_name, this.stop.stop_id)
-      // TODO: Query for stopTimes based on this.stop.stop_id
+      // TODO: List stop times by arrival_time, display only latest
+      // TODO: Figure out how to show 1 time per route (& per direction)
+
+      fetch(`${this.$api}/times/stop/${this.id}`)
+        .then(res => res.json())
+        .then(data => { this.times = data })
+        .catch(err => console.error('Could not fetch central stops:', err))
     }
   }
 </script>
